@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jvnet.jaxb2_commons</groupId>
+	<groupId>codes.rafael.jaxb2_commons</groupId>
 	<artifactId>jaxb2-basics-project</artifactId>
 	<packaging>pom</packaging>
-	<version>2.3.6-SNAPSHOT</version>
+	<version>3.0.0-SNAPSHOT</version>
 	<name>JAXB2 Basics - Project</name>
-	<url>https://github.com/highsource/jaxb2-basics</url>
+	<url>https://github.com/raphw/jaxb2-basics</url>
 	<description>JAXB2 Basics is a part of JAXB2 Commons project which implements plugins and tools for JAXB 2.x reference implementation.</description>
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/highsource/jaxb2-basics/issues</url>
+		<url>https://github.com/raphw/jaxb2-basics/issues</url>
 	</issueManagement>
 	<inceptionYear>2005</inceptionYear>
 	<mailingLists>
@@ -61,8 +61,8 @@
 		</license>
 	</licenses>
 	<scm>
-        <connection>scm:git:https://github.com/highsource/jaxb2-basics.git</connection>
-        <url>https://github.com/highsource/jaxb2-basics</url>
+        <connection>scm:git:https://github.com/raphw/jaxb2-basics.git</connection>
+        <url>https://github.com/raphw/jaxb2-basics</url>
         <tag>${project.version}</tag>
 	</scm>
 	<modules>
@@ -170,18 +170,14 @@
 	</profiles>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jaxb.version>2.3.6</jaxb.version>
-		<jaxb-api.version>2.3.1</jaxb-api.version>
-		<jaxb-core.version>2.3.0.1</jaxb-core.version>
-		<activation.version>1.2.0</activation.version>
+		<jaxb.version>4.0.1</jaxb.version>
+		<jaxb-api.version>4.0.0</jaxb-api.version>
+		<activation.version>2.1.0</activation.version>
 		<maven-jaxb2-plugin.version>0.15.1</maven-jaxb2-plugin.version>
         <maven-nexus-staging-maven-plugin.version>1.6.8</maven-nexus-staging-maven-plugin.version>
 		<cxf-codegen-plugin.version>3.3.13</cxf-codegen-plugin.version>
 		<slf4j.version>1.7.36</slf4j.version>
 	</properties>
-	<prerequisites>
-		<maven>3.1</maven>
-	</prerequisites>
 	<dependencies>
 		<!-- JUnit -->
 		<dependency>
@@ -203,32 +199,32 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics-plugins</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics-ant</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics-runtime</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics-tools</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics-testing</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
+				<groupId>codes.rafael.jaxb2_commons</groupId>
 				<artifactId>jaxb2-basics</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -245,28 +241,28 @@
 			</dependency>
 			<!-- JAXB -->
 			<dependency>
-				<groupId>javax.xml.bind</groupId>
-				<artifactId>jaxb-api</artifactId>
+				<groupId>jakarta.xml.bind</groupId>
+				<artifactId>jakarta.xml.bind-api</artifactId>
 				<version>${jaxb-api.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.glassfish.jaxb</groupId>
-				<artifactId>jaxb-runtime</artifactId>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
 				<version>${jaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.glassfish.jaxb</groupId>
+				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-core</artifactId>
-				<version>${jaxb-core.version}</version>
+				<version>${jaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.glassfish.jaxb</groupId>
+				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-xjc</artifactId>
 				<version>${jaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.sun.activation</groupId>
-				<artifactId>javax.activation</artifactId>
+				<groupId>jakarta.activation</groupId>
+				<artifactId>jakarta.activation-api</artifactId>
 				<version>${activation.version}</version>
 			</dependency>
 			<!-- JUnit -->
@@ -390,10 +386,10 @@
 							<version>1.10.12</version>
 						</dependency>
 						<dependency>
-                                                        <groupId>org.apache.ant</groupId>
-                                                        <artifactId>ant-junit</artifactId>
-                                                        <version>1.10.12</version>
-                                                </dependency>
+							<groupId>org.apache.ant</groupId>
+							<artifactId>ant-junit</artifactId>
+							<version>1.10.12</version>
+						</dependency>
 					</dependencies>
 				</plugin>
 				<plugin>

@@ -1,27 +1,37 @@
 package org.jvnet.jaxb2_commons.reflection.util.test;
 
-import java.net.URI;
-import java.net.URISyntaxException;
-
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Ignore;
 import org.jvnet.jaxb2_commons.reflection.util.Accessor;
 import org.jvnet.jaxb2_commons.reflection.util.FieldAccessor;
 
 public class FieldAccessorTest {
 
 	@Test
-	public void testGetAndSet() throws URISyntaxException {
-		final URI uri = new URI("urn:test");
+	public void testGetAndSet() {
+		Sample sample = new Sample();
+		sample.setValue("foo");
 
-		final Accessor<String> schemeAccessor = new FieldAccessor<String>(
-				URI.class, "scheme", String.class);
+		final Accessor<String> sampleAccessor = new FieldAccessor<String>(
+				Sample.class, "value", String.class);
 
-		Assert.assertEquals("urn", schemeAccessor.get(uri));
-		schemeAccessor.set(uri, "nru");
-		Assert.assertEquals("nru", schemeAccessor.get(uri));
-		Assert.assertEquals("nru", uri.getScheme());
-
+		Assert.assertEquals("foo", sampleAccessor.get(sample));
+		sampleAccessor.set(sample, "bar");
+		Assert.assertEquals("bar", sampleAccessor.get(sample));
+		Assert.assertEquals("bar", sample.getValue());
 	}
 
+	public static class Sample {
+
+		private String value;
+
+		public String getValue() {
+			return value;
+		}
+
+		public void setValue(String value) {
+			this.value = value;
+		}
+	}
 }
