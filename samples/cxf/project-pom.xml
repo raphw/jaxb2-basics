@@ -2,7 +2,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jvnet.jaxb2_commons</groupId>
+	<groupId>codes.rafael.jaxb2_commons</groupId>
 	<artifactId>jaxb2-basics-sample-cxf-maven</artifactId>
 	<version>${project.version}</version>
 	<packaging>jar</packaging>
@@ -14,26 +14,26 @@
             <version>2.3.1</version>
             <scope>provided</scope>
         </dependency>
-<dependency>
-    <groupId>javax.jws</groupId>
-    <artifactId>javax.jws-api</artifactId>
-    <version>1.1</version>
-    <scope>provided</scope>
-</dependency>
 		<dependency>
-			<groupId>org.glassfish.jaxb</groupId>
-			<artifactId>jaxb-runtime</artifactId>
+			<groupId>javax.jws</groupId>
+			<artifactId>javax.jws-api</artifactId>
+			<version>1.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
 			<version>${jaxb.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.sun.activation</groupId>
-			<artifactId>javax.activation</artifactId>
+			<groupId>jakarta.activation</groupId>
+			<artifactId>jakarta.activation-api</artifactId>
 			<version>${activation.version}</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.jvnet.jaxb2_commons</groupId>
+			<groupId>codes.rafael.jaxb2_commons</groupId>
 			<artifactId>jaxb2-basics-runtime</artifactId>
 			<version>${project.version}</version>
 		</dependency>
@@ -83,22 +83,22 @@
 				</configuration>
 				<dependencies>
 					<dependency>
-			                        <groupId>org.glassfish.jaxb</groupId>
-			                        <artifactId>jaxb-runtime</artifactId>
-			                        <version>${jaxb.version}</version>
-                			</dependency>
+							<groupId>com.sun.xml.bind</groupId>
+							<artifactId>jaxb-runtime</artifactId>
+							<version>${jaxb.version}</version>
+					</dependency>
 					<dependency>
-			                        <groupId>org.glassfish.jaxb</groupId>
+						<groupId>com.sun.xml.bind</groupId>
 						<artifactId>jaxb-xjc</artifactId>
 						<version>${jaxb.version}</version>
 					</dependency>
 					<dependency>
-			                        <groupId>org.glassfish.jaxb</groupId>
+			                        <groupId>com.sun.xml.bind</groupId>
 						<artifactId>jaxb-core</artifactId>
 						<version>${jaxb-core.version}</version>
 					</dependency>
 					<dependency>
-						<groupId>org.jvnet.jaxb2_commons</groupId>
+						<groupId>codes.rafael.jaxb2_commons</groupId>
 						<artifactId>jaxb2-basics</artifactId>
 						<version>${project.version}</version>
 					</dependency>
